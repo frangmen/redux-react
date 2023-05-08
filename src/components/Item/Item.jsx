@@ -1,6 +1,6 @@
 import React from "react";
 import { ListGroup, Card } from "react-bootstrap";
-
+import { Link } from "react-router-dom";
 const Item = ({ item }) => {
     return (
         <div>
@@ -11,15 +11,17 @@ const Item = ({ item }) => {
                     borderRadius: "10px",
                     border: "none",
                 }}>
-                <Card.Img
-                    variant='top'
-                    src={item.img}
-                    style={{
-                        height: "200px",
-                        objectFit: "cover",
-                        borderRadius: "10px 10px 0px 0px",
-                    }}
-                />
+                <Link to={`/detail/${item.id}`}>
+                    <Card.Img
+                        variant='top'
+                        src={item.img}
+                        style={{
+                            height: "200px",
+                            objectFit: "cover",
+                            borderRadius: "10px 10px 0px 0px",
+                        }}
+                    />
+                </Link>
                 <Card.Body>
                     <Card.Title
                         style={{
