@@ -1,0 +1,15 @@
+.tasklist {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tasks {
+    font-size: 20px;
+}
+.tasks:hover {
+    background-color: lightgray;
+    cursor: pointer;
+    font-weight: bold; /* Añade negrita a la letra */
+    font-size: 1.21em; /* Aumenta el tamaño de la fuente */
+}

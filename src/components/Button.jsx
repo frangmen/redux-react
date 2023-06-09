@@ -2,19 +2,18 @@ import React, { useState } from "react";
 
 const Button = () => {
     const [pressed, setPressed] = useState(false);
-    console.log("🚀 ~ file: Button.jsx:5 ~ Button ~ pressed:", pressed);
     return (
         <div>
             {pressed ? (
                 <div>
-                    <h1>¿Are you sure?</h1>
+                    <h1>Ocultar</h1>
                     <button onClick={() => setPressed(!pressed)}>
-                        There's no turning back
+                        Toda la informacion
                     </button>
                 </div>
             ) : (
                 <button onClick={() => setPressed(!pressed)}>
-                    Hola Mundo, si presionas aquí, no hay vuelta atrás
+                    Hola Mundo, mostrar
                 </button>
             )}
         </div>

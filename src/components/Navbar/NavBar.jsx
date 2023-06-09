@@ -14,14 +14,8 @@ const NavBar = () => {
                     alt='React Redux Logo'
                 />
                 <Navbar.Brand className='d-flex align-items-center justify-content-center'>
-                    |
-                    <code>
-                        <h1 style={{ fontSize: "2.8rem", color: "#ff4081" }}>
-                            My Title
-                        </h1>
-                    </code>
+                    |<code>Preguntas Frecuentes</code>
                 </Navbar.Brand>{" "}
-                React Redux
             </Navbar.Brand>
             <Navbar.Toggle aria-controls='basic-navbar-nav' />
             <Navbar.Collapse id='basic-navbar-nav'>
