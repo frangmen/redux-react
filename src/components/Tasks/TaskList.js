@@ -2,28 +2,58 @@ import React from "react";
 import { connect } from "react-redux";
 import { deleteTask } from "../reducers/actions";
 import "../../components/Home/tasklist.css";
+import { useState } from "react";
 
 const TaskList = ({ tasks, deleteTask }) => {
-    console.log("🚀 ~ file: TaskList.js:6 ~ TaskList ~ tasks:", tasks);
+    const [editableTask, setEditableTask] = useState(null);
     const handleDeleteTask = (taskId) => {
         deleteTask(taskId);
     };
 
     const handleCopyTask = (task) => {
-        navigator.clipboard.writeText(task);
+        if (editableTask && editableTask.id === task.id) {
+            return (
+                <input
+                    type='text'
+                    value={editableTask.task}
+                    onChange={(e) =>
+                        setEditableTask({
+                            ...editableTask,
+                            task: e.target.value,
+                        })
+                    }
+                    onBlur={() => setEditableTask(null)}
+                />
+            );
+        } else {
+            navigator.clipboard.writeText(task);
+        }
     };
-
     return (
         <ul>
             {tasks.map((task) => (
                 <li
                     className='tasks'
                     key={task.id}
-                    onClick={() => handleCopyTask(task.task)}>
+                    onClick={() => setEditableTask(task)}>
                     {task.task}
-                    {/*  <button onClick={() => handleDeleteTask(task.id)}>
-                        Eliminar
-                    </button> */}
+                    {editableTask && editableTask.id === task.id ? (
+                        <input
+                            type='text'
+                            value={editableTask.task}
+                            onChange={(e) =>
+                                setEditableTask({
+                                    ...editableTask,
+                                    task: e.target.value,
+                                })
+                            }
+                            onBlur={() => setEditableTask(null)}
+                        />
+                    ) : (
+                        <button onClick={() => handleDeleteTask(task.id)}>
+                            Eliminar
+                        </button>
+                    )}
                 </li>
             ))}
         </ul>
