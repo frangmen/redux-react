@@ -11,23 +11,7 @@ const TaskList = ({ tasks, deleteTask }) => {
     };
 
     const handleCopyTask = (task) => {
-        if (editableTask && editableTask.id === task.id) {
-            return (
-                <input
-                    type='text'
-                    value={editableTask.task}
-                    onChange={(e) =>
-                        setEditableTask({
-                            ...editableTask,
-                            task: e.target.value,
-                        })
-                    }
-                    onBlur={() => setEditableTask(null)}
-                />
-            );
-        } else {
-            navigator.clipboard.writeText(task);
-        }
+        navigator.clipboard.writeText(task);
     };
     return (
         <ul>
@@ -35,9 +19,9 @@ const TaskList = ({ tasks, deleteTask }) => {
                 <li
                     className='tasks'
                     key={task.id}
-                    onClick={() => setEditableTask(task)}>
+                    onClick={() => handleCopyTask(task.task)}>
                     {task.task}
-                    {editableTask && editableTask.id === task.id ? (
+                    {/*  {editableTask && editableTask.id === task.id ? (
                         <input
                             type='text'
                             value={editableTask.task}
@@ -53,7 +37,7 @@ const TaskList = ({ tasks, deleteTask }) => {
                         <button onClick={() => handleDeleteTask(task.id)}>
                             Eliminar
                         </button>
-                    )}
+                    )} */}
                 </li>
             ))}
         </ul>
