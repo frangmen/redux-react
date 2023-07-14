@@ -23,8 +23,8 @@ const NavBar = () => {
                     <Nav.Link as={Link} to='/products'>
                         |<code>Saludos</code>
                     </Nav.Link>
-                    <Nav.Link as={Link} to='/category2'>
-                        |<code>Category 2</code>
+                    <Nav.Link as={Link} to='/category1'>
+                        |<code>Administrativos</code>
                     </Nav.Link>
                     <Nav.Link as={Link} to='/category3'>
                         <code>Category 3</code>
