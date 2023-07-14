@@ -6,13 +6,13 @@ const NavBar = () => {
     return (
         <Navbar bg='light' expand='md'>
             <Navbar.Brand as={Link} to='/'>
-                <img
+                {/*  <img
                     src='/assets/Redux_Logo.png'
-                    width='220'
-                    height='150'
+                    width='120'
+                    height='80'
                     className='d-inline-block align-top mr-2'
                     alt='React Redux Logo'
-                />
+                /> */}
                 <Navbar.Brand className='d-flex align-items-center justify-content-center'>
                     |<code>Preguntas Frecuentes</code>
                 </Navbar.Brand>{" "}
@@ -21,13 +21,13 @@ const NavBar = () => {
             <Navbar.Collapse id='basic-navbar-nav'>
                 <Nav className='mr-auto'>
                     <Nav.Link as={Link} to='/products'>
-                        Products
+                        |<code>Saludos</code>
                     </Nav.Link>
                     <Nav.Link as={Link} to='/category2'>
-                        Category 2
+                        |<code>Category 2</code>
                     </Nav.Link>
                     <Nav.Link as={Link} to='/category3'>
-                        Category 3
+                        <code>Category 3</code>
                     </Nav.Link>
                 </Nav>
             </Navbar.Collapse>

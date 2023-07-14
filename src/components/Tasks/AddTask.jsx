@@ -4,7 +4,6 @@ import { addTask } from "../reducers/actions";
 
 const AddTask = ({ dispatch }) => {
     const [task, setTask] = useState("");
-    console.log("🚀 ~ file: AddTask.jsx:7 ~ AddTask ~ task:", task);
 
     const handleAddTask = () => {
         dispatch(addTask(task));
@@ -13,7 +12,13 @@ const AddTask = ({ dispatch }) => {
 
     return (
         <div>
-            <input
+            <textarea
+                style={{
+                    width: "90%",
+                    height: "200px",
+                    textAlign: "justify",
+                    marginLeft: "20px",
+                }}
                 type='text'
                 value={task}
                 onChange={(e) => setTask(e.target.value)}

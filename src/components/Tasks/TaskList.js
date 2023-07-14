@@ -21,7 +21,7 @@ const TaskList = ({ tasks, deleteTask }) => {
                     key={task.id}
                     onClick={() => handleCopyTask(task.task)}>
                     {task.task}
-                    {/*  {editableTask && editableTask.id === task.id ? (
+                    {editableTask && editableTask.id === task.id ? (
                         <input
                             type='text'
                             value={editableTask.task}
@@ -37,7 +37,7 @@ const TaskList = ({ tasks, deleteTask }) => {
                         <button onClick={() => handleDeleteTask(task.id)}>
                             Eliminar
                         </button>
-                    )} */}
+                    )}
                 </li>
             ))}
         </ul>

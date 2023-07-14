@@ -12,7 +12,7 @@ function App() {
                     <Route path='/products' element={<ItemListContainer />} />
                 </Routes>
                 <p>
-                    <code>Programming</code> Fran
+                    <code>Programming</code> Fran @2023
                 </p>
             </BrowserRouter>
         </div>
