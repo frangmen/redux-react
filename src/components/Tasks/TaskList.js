@@ -22,7 +22,7 @@ const TaskList = ({ tasks, deleteTask }) => {
 
     return (
         <div>
-            <button onClick={toggleDeleteMode}>
+            <button className='delete-mode-button' onClick={toggleDeleteMode}>
                 {deleteMode ? "Desactivar Eliminar" : "Activar Eliminar"}
             </button>
             <ul>
