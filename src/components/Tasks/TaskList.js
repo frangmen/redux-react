@@ -7,7 +7,6 @@ import { useState } from "react";
 const TaskList = ({ tasks, deleteTask }) => {
     const [editableTask, setEditableTask] = useState(null);
     const [deleteMode, setDeleteMode] = useState(false);
-    const [deleteButtonActive, setDeleteButtonActive] = useState(false);
 
     const handleDeleteTask = (taskId) => {
         deleteTask(taskId);
@@ -15,13 +14,6 @@ const TaskList = ({ tasks, deleteTask }) => {
 
     const toggleDeleteMode = () => {
         setDeleteMode(!deleteMode);
-    };
-
-    const toggleDeleteButton = () => {
-        setDeleteButtonActive(!deleteButtonActive);
-        if (!deleteButtonActive) {
-            setDeleteMode(false);
-        }
     };
 
     const handleCopyTask = (task) => {
